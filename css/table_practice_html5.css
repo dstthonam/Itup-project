@@ -1,0 +1,65 @@
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+article {
+  padding: 10px;
+}
+table {
+  background-color: rgba(255, 202, 202, 0.3);
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 10px;
+  border-collapse: collapse;
+}
+td, th {
+  border: 0.7px solid rgba(73, 70, 216, 1);
+  padding: 5px 5px 5px 10px;
+  text-align: left;
+  color: rgba(132, 131, 194, 0.863);
+}
+th {
+  background-color: rgba(84, 82, 212, 0.863);
+  text-align: left;
+  color: white;
+}
+thead.highlighter {
+  /* background-color: rgba(255, 202, 202, 0.3); */
+}
+nav {
+  text-align: right;
+  font-size: 1.4em;
+  font-weight: bolder;
+  background-color: rgba(68, 77, 212, 0.6);
+  color: white;
+  padding: 10px;
+}
+header {
+  background-color: rgba(255, 202, 202, 0.3);
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: bold;
+  padding: 10px;
+}
+section {
+  background-color: ;
+  text-align: center;
+  background-color: rgba(255, 202, 202, 0.3);
+}
+caption {
+  background-color: rgba(255, 202, 202, 0.3);
+  font-size: 1.1em;
+  font-weight: bold;
+  padding-bottom: 10px;
+  color: rgba(132, 131, 194, 0.863);
+}
+footer {
+  background-color: rgba(228, 133, 44, 0.863);
+  text-align: right;
+  font-size: 1em;
+  font-weight: bolder;
+  padding: 10px;
+}
