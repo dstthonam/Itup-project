@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box1 {
+      background: orange;
+      color: white;
+      border: 2px solid orange;
+      border-radius: 10px;
+      padding: 5px;
+      width: 50px;
+      height: 50px;
+      text-align: center;
+      line-height: 50px;
+      font-weight: bolder;
+    }
+    div {
+      background-color: orange;
+    }
+  </style>
+</head>
+<body>
+  <div class="box1">box</div>
+  <script type="text/javascript">
+    function makeRed(event) {
+      box.style.background = "red";
+    }
+    function makeBlue(event) {
+      box.style.background = "blue";
+    }
+    function makeOrange(event) {
+      box.style.background = "orange";
+    }
+    const box = document.querySelector(".box1");
+    box.addEventListener("mouseover", makeRed);
+    box.addEventListener("mouseout", makeBlue);
+    box.addEventListener("click", makeOrange);
+  </script>
+  <form action="https://www.naver.com">
+    <input type="text" name="data" id="">
+    <input type="submit" value="Sign In">
+  </form>
+</body>
+</html>
