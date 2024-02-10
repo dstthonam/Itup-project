@@ -1,0 +1,96 @@
+body {
+}
+.sitecentertop {
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.fixed-top {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  border-bottom: 1px solid rgba(196, 98, 98, 0.397);
+  background-color: rgba(185, 124, 124, 0.144);
+}
+.menutop {
+  height: 30px;
+  line-height: 30px;
+}
+a {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 1);
+  font-family: 'Protest Strike', sans-serif;
+}
+.sitecenter {
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.site-title {
+  font-size: 2em;
+  font-family: 'Protest Strike', sans-serif;
+  margin-bottom: 12px;
+}
+.site-subtitle {
+  font-size: 1em;
+  font-family: 'Protest Strike', sans-serif;
+  margin-bottom: 32px;
+}
+.columnlimit {
+  width: 1000px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.result {
+  width: 880px;
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+  border: 3px solid rgba(197, 102, 48, 0.692);
+  border-radius: 10px;
+  background-color: rgba(214, 99, 99, 0.685);
+  color: rgba(32, 23, 23, 0.877);
+  font-size: 2em;
+  font-family: 'Protest Strike', sans-serif;
+  margin: 10px;
+}
+.selectclick {
+  text-align: center;
+  border: 3px solid rgba(168, 61, 61, 0.897);
+  width: 200px;
+  height: 100px;
+  line-height: 100px;
+  border-radius: 10px;
+  background-color: rgba(149, 219, 58, 0.795);
+  font-size: 3em;
+  font-family: 'Protest Strike', sans-serif;
+  color: rgba(168, 61, 61, 0.897);
+  margin: 10px;
+}
+.selected {
+  text-align: center;
+  border: 3px solid rgba(32, 23, 23, 0.877);
+  width: 200px;
+  height: 100px;
+  line-height: 100px;
+  border-radius: 10px;
+  padding: 8px, 5px;
+  background-color: rgba(44, 41, 41, 0.075);
+  font-size: 3em;
+  font-family: 'Protest Strike', sans-serif;
+  margin: 10px;
+}
+.footer {
+  width: 100%;
+  text-align: center;
+  font-size: 1em;
+  border-top: 1px solid rgba(85, 82, 82, 0.144);
+  padding-top: 15px;
+  margin-top: 10px;
+}

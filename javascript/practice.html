@@ -24,6 +24,7 @@
 </head>
 <body>
   <div class="box1">box</div>
+
   <script type="text/javascript">
     function makeRed(event) {
       box.style.background = "red";
@@ -39,9 +40,28 @@
     box.addEventListener("mouseout", makeBlue);
     box.addEventListener("click", makeOrange);
   </script>
-  <form action="https://www.naver.com">
-    <input type="text" name="data" id="">
-    <input type="submit" value="Sign In">
+
+  <form>
+    <input type="password" name="data" id="passwordText">
+    <input type="submit" value="Sign In" id="signal">
   </form>
+
+  <script type="text/javascript">
+    
+    function checkPassword(event) {
+      const passwordData = document.querySelector("#passwordText");
+      let passwordText = passwordData.value;
+      console.log(passwordText);
+      if (passwordText == "apple123") {
+        window.open("https://www.naver.com/");
+      } else {
+        alert("access failed");
+      }
+    }
+
+    const signinButton = document.querySelector("#signal");
+    signinButton.addEventListener("click", checkPassword);
+
+  </script>
 </body>
 </html>
