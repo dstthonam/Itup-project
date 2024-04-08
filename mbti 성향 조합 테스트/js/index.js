@@ -80,74 +80,63 @@ let combinations = {
       "bad": ["ISFP", "ESFP", "ISTP", "ESTP", "ISFJ", "ESFJ", "ISTJ", "ESTJ"]
   }
 }
-
 const selectedMBTIs = new Array();
 const classImgLists = document.querySelectorAll("#mbti")
 const messageBox = document.querySelector("div.result")
-
 function selectMbti(event) {
-    let found = false;
-    if (event.target.getAttribute("class") === "selected") {
-        if (selectedMBTIs.length < 2) {
-            event.target.setAttribute("class", "selectclick");
-            selectedMBTIs[selectedMBTIs.length] = event.target.innerHTML;
-            console.log("selectedMBTIs", selectedMBTIs);
-            console.log("selectedMBTIs.length", selectedMBTIs.length);
-        }
+  let found = false;
+  if (event.target.getAttribute("class") === "selected") {
+    if (selectedMBTIs.length < 2) {
+      event.target.setAttribute("class", "selectclick");
+      selectedMBTIs[selectedMBTIs.length] = event.target.innerHTML;
+      console.log("selectedMBTIs", selectedMBTIs);
+      console.log("selectedMBTIs.length", selectedMBTIs.length);
+      }
     } else {
-        event.target.setAttribute("class", "selected");
-        for (let index = 0; index < selectedMBTIs.length; index = index + 1) {
-            if (selectedMBTIs[index] === event.target.innerHTML) {
-                selectedMBTIs.splice(index, 1);
-            }
-        }  
-        console.log("selectedMBTIs", selectedMBTIs);
-        console.log("selectedMBTIs.length", selectedMBTIs.length);
+      event.target.setAttribute("class", "selected");
+      for (let index = 0; index < selectedMBTIs.length; index = index + 1) {
+        if (selectedMBTIs[index] === event.target.innerHTML) {
+          selectedMBTIs.splice(index, 1);
+        }
+      }  
+      console.log("selectedMBTIs", selectedMBTIs);
+      console.log("selectedMBTIs.length", selectedMBTIs.length);
     }
-
     if (selectedMBTIs.length === 0){
       messageBox.innerHTML = "두 MBTI 성향을 클릭하세요.";
     } else if (selectedMBTIs.length === 1) {
       messageBox.innerHTML = "하나 더 MBTI 성향을 클릭하세요.";
     } else {
-
       for (let index in combinations[selectedMBTIs[0]].best) {
-          if (selectedMBTIs[1] === combinations[selectedMBTIs[0]].best[index]) {
-            messageBox.innerHTML = selectedMBTIs[0] + "와 " + selectedMBTIs[1] + "는 매우 잘 맞는 조합입니다.";
+        if (selectedMBTIs[1] === combinations[selectedMBTIs[0]].best[index]) {
+          messageBox.innerHTML = selectedMBTIs[0] + "와 " + selectedMBTIs[1] + "는 매우 잘 맞는 조합입니다.";
+          found = true;
+          break;
+        }
+      } 
+      if (found !== true) {
+        for (let index in combinations[selectedMBTIs[0]].good) {
+          if (selectedMBTIs[1] === combinations[selectedMBTIs[0]].good[index]) {
+            messageBox.innerHTML = selectedMBTIs[0] + "와 " + selectedMBTIs[1] + "는 평균보다 더 잘 맞는 조합입니다.";
             found = true;
             break;
           }
-      } 
-          if (found !== true) {
-            for (let index in combinations[selectedMBTIs[0]].good) {
-              if (selectedMBTIs[1] === combinations[selectedMBTIs[0]].good[index]) {
-                messageBox.innerHTML = selectedMBTIs[0] + "와 " + selectedMBTIs[1] + "는 평균보다 더 잘 맞는 조합입니다.";
-                found = true;
-                break;
-              }
-            } 
+        } 
+      }
+      if (found !== true) {
+        for (let index in combinations[selectedMBTIs[0]].bad) {
+          if (selectedMBTIs[1] === combinations[selectedMBTIs[0]].bad[index]) {
+            messageBox.innerHTML = selectedMBTIs[0] + "와 " + selectedMBTIs[1] + "는 평균보다 잘 안맞는 조합입니다.";
+            found = true;
+            break;
           }
-          if (found !== true) {
-            for (let index in combinations[selectedMBTIs[0]].bad) {
-              if (selectedMBTIs[1] === combinations[selectedMBTIs[0]].bad[index]) {
-                messageBox.innerHTML = selectedMBTIs[0] + "와 " + selectedMBTIs[1] + "는 평균보다 잘 안맞는 조합입니다.";
-                found = true;
-                break;
-              }
-            }
-          }
-          if (found !== true) {
-            messageBox.innerHTML = selectedMBTIs[0] + "와 " + selectedMBTIs[1] + "는 좋지도 안좋지도 않은 평범한 조합입니다.";
-          }
-
-
-    }
+        }
+      }
+      if (found !== true) {
+        messageBox.innerHTML = selectedMBTIs[0] + "와 " + selectedMBTIs[1] + "는 좋지도 안좋지도 않은 평범한 조합입니다.";
+      }
+  }
 }
-
 for (let index = 0; index < classImgLists.length; index = index + 1) {
-    classImgLists[index].addEventListener('click', selectMbti);
+  classImgLists[index].addEventListener('click', selectMbti);
 }
-
-
-
-
